@@ -6,4 +6,6 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [ring/ring-core "1.8.0"]
                  [ring/ring-jetty-adapter "1.8.0"]]
-  :repl-options {:init-ns server.core})
+  :repl-options {:init-ns server.core}
+  :ring {:handler server.core/handler}
+  :plugins [[lein-ring "0.12.5"]])
