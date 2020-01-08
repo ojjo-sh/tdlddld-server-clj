@@ -1,12 +1,8 @@
-(ns server.core)
+(ns server.core
+  (:require
+   [compojure.core :refer :all]
+   [server.api.todos :refer [todo-routes]]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
-
-
-(defn handler [request]
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "Hello world."})
+(defroutes app-routes 
+  (context "/api/todos" [] 
+    (todo-routes)))

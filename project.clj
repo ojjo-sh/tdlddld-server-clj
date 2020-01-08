@@ -5,7 +5,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [ring/ring-core "1.8.0"]
-                 [ring/ring-jetty-adapter "1.8.0"]]
+                 [ring/ring-jetty-adapter "1.8.0"]
+                 [compojure "1.6.1"]]
   :repl-options {:init-ns server.core}
-  :ring {:handler server.core/handler}
+  :ring {:handler server.core/app-routes}
   :plugins [[lein-ring "0.12.5"]])
